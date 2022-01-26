@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Generator</title>
+</head>
+<body>
+    <div class="container">
+
+        <!--Simple Form-->
+        <h4>Upload Master Roll File</h4>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+              <input type="file" name="upload">
+              <br>
+              <button class="btn btn-dark my-4" type="submit">Submit</button>
+              <br>
+              
+        </form>
+
+        <h4>Upload Response File</h4>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+              <input type="file" name="upload">
+              <br>
+              <button class="btn btn-dark my-4" type="submit">Submit</button>
+              <br>
+        </form>
+
+        <form action = "print", method = "get">
+          Marks for Correct Answer : <input name = "pos", type = "float">
+          <!-- <input type = "submit" value = "submit"> -->
+          <br>
+          Marks for Wrong Answer : <input name = "neg", type = "float">
+          <br>
+          <input type = "submit" value = "submit">
+          <br>
+        </form>
+        <!-- <form action = "print", method = "get">
+          Postive : <input name = "pos", type = "number">
+          <input type = "submit" value = "submit">
+          <br>
+          Negitive : <input name = "neg", type = "number">
+          <input type = "submit" value = "submit">
+        </form> -->
+        <!-- <a href="">Postive : <input name = "pos", type = "number">
+          <input type = "submit" value = "submit"></a> -->
+
+        <br>
+        <p><a href = "marksheet"><button>Generate Marksheet</button></a></p>
+        <p><a href = "concise"><button>Generate Concise Marksheet</button></a></p>
+        <p><a href = "email"><button>Send Email</button></a></p>
+        <!-- <p><a href = "print"><button>Print</button></a></p> -->
+
+      </div>
+</body>
+</html>
